@@ -1,0 +1,615 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+:root {
+    --color0: #fff;
+    --color1: rgb(255 255 255);
+    --color2: yellow;
+    --color3: #00113e;
+    --primary: rgb(0, 106, 255);
+    --danger: red;
+    --hover: rgb(0 60 145);
+    --font: 'Lato';
+    --radius: 5px;
+}
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .loader img{width: 100%;height: 100%;} */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 50px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: var(--color3);
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--color2);
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--color2);
+}
+
+
+/**************
+GENERAL STYLE *
+**************/
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid transparent;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0px;
+    color: var(--color3);
+    font-size: 18px;
+    background: transparent;
+    transition: all .3s linear;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: none;
+    box-shadow: 10px 10px 0px #00000038;
+}
+
+.btn {
+    padding: 8px 12px 11px;
+    width: fit-content;
+    background: var(--color2);
+    border-radius: var(--radius);
+    position: relative;
+    transition: all .3s linear;
+    cursor: pointer;
+    color: var(--color1);
+    border: transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+}
+
+.btn:hover,
+.active {
+    background: var(--hover);
+}
+
+.btn-danger:hover {
+    background-color: rgb(172, 9, 9);
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    background-color: #eef3ff;
+    color: var(--color0);
+    font-family: var(--font);
+    flex-direction: column;
+}
+
+#banner .infos {
+    background: var(--color3);
+    padding: 3% 10%;
+    border-radius: var(--radius);
+    box-shadow: 5px 4px 50px #0000001f;
+}
+
+.upload-img {
+    height: 100%;
+}
+
+header {
+    background: var(--color3);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+header .sidebar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+}
+
+header .sidebar h1 {
+    font-size: 30px;
+}
+
+header .sidebar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+header .sidebar ul li a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--color0);
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    transition: all .3s linear;
+}
+
+header .sidebar ul li a:hover {
+    background: var(--hover);
+}
+
+header .sidebar .service-item {
+    position: relative;
+}
+
+header .sidebar .serviceList {
+    position: absolute;
+    flex-direction: column;
+    align-items: start;
+    line-height: 2;
+    padding: 10px 0 15px;
+    background: #001a4c;
+    top: 46px;
+    backdrop-filter: blur(5px);
+    transition: all .3s linear;
+    width: 350px;
+    visibility: hidden;
+    box-shadow: 10px 10px 100px #000000b0;
+    z-index: 9;
+}
+
+.service-item:hover .serviceList {
+    visibility: visible;
+}
+
+header .sidebar .serviceList:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 12px;
+    background: #001a4c;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    top: -9px;
+    left: 61px;
+    transform: rotate(0deg);
+}
+
+header .sidebar .serviceList li a {
+    color: #a5a5a57d;
+    padding: 0;
+    font-size: 18px;
+}
+
+header .sidebar .serviceList li a:hover {
+    color: var(--color0);
+    background: transparent;
+}
+
+main {
+    padding: 2% 2%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+main section {
+    width: 100%;
+}
+
+main section h2 {
+    font-size: 34px;
+    padding: 5px 0;
+    border-bottom: 1px solid #000c2c6b;
+    margin: 20px 0;
+    color: var(--color3);
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+tr {
+    background: #fff;
+}
+
+table thead tr {
+    background: #000c2c;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+table th,
+table td {
+    padding: 20px;
+    border: 1px solid #0000000f;
+    color: var(--color3);
+}
+
+table i {
+    margin: 0 0 0 5px;
+}
+
+table thead tr th {
+    color: var(--color0);
+}
+
+table tr:nth-child(even) {
+    background: #e9e9e9;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    background: var(--color3);
+    color: var(--color0);
+    padding: 4% 8%;
+    line-height: 2;
+    font-size: 20px;
+    border-radius: var(--radius);
+    z-index: 9999;
+    position: relative;
+    justify-content: space-evenly;
+    min-height: 80vh;
+}
+
+.detail span {
+    padding: 20px;
+    margin: 1px;
+    background: #04184e;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.detail .msgbox {
+    padding: 4% 4%;
+    box-shadow: 10px 10px 100px rgb(20 20 20 / 41%);
+    margin-bottom: 20px;
+    background: #04184e;
+    letter-spacing: 1px;
+}
+
+.detail p {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #fff;
+}
+
+.detail .infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail .infos span b {
+    color: var(--color2);
+    padding-right: 10px;
+}
+
+.closer {
+    text-align: right;
+    top: 20px;
+    right: 50px;
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+/* page de connexion */
+
+#connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#connexion .admin {
+    display: flex;
+    background: var(--color3);
+    padding: 50px;
+    border-radius: var(--radius);
+    position: relative;
+    width: 450px;
+    flex-direction: column;
+}
+
+#connexion .admin form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#connexion .admin form input {
+    margin: 20px 0;
+}
+
+#connexion .admin form i {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--primary);
+    font-size: 24px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color3);
+}
+
+#connexion .admin form label {
+    font-size: 22px;
+}
+
+#connexion .error {
+    padding: 12px;
+    background: var(--danger);
+    border-radius: var(--radius);
+    margin: 20px 0px;
+    font-size: 20px;
+}
+
+
+/* ----page de connexion---- */
+
+.addService form {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 40px;
+    padding-top: 0px;
+}
+
+.addService form .infos {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addService form .upload-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img#preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.addService form .upload-box input {
+    display: none;
+}
+
+.addService form .upload-box .upload-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    background: transparent;
+    border: 5px dashed #61616163;
+    height: 55vh;
+}
+
+.addService form .upload-box label {
+    background: #979797;
+    padding: 15px 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.addService form input {
+    background: #0000005c;
+    width: 78%;
+}
+
+.addService form input,
+.addService form textarea {
+    margin: 10px 0 0 0;
+    width: 100%;
+    padding: 15px;
+    background: #7e7e7e1f;
+    border: transparent;
+    letter-spacing: 1px;
+}
+
+.addService form textarea {
+    min-height: 40vh;
+    color: var(--color3);
+    font-size: 20px;
+    font-family: var(--font);
+    line-height: 1.5;
+}
+
+.addService form input[type="submit"] {
+    width: auto;
+    float: left;
+    align-self: baseline;
+    background: var(--primary);
+    padding: 15px;
+}
+
+.addService form input[type="submit"]:hover {
+    background: var(--hover);
+}
+
+.addService form input[type="submit"]:focus {
+    border-bottom: none;
+}
+
+section#service {
+    display: flex;
+}
+
+.bloc-contain {
+    background: #eef3ff;
+    padding: 20px 40px;
+    width: 100%;
+    position: relative;
+}
+
+.bloc-contain .title {
+    position: relative;
+}
+
+.bloc-contain .title .btn {
+    position: absolute;
+    right: 0;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.bloc-contain .title {
+    font-size: 34px;
+    color: var(--color3);
+    border-bottom: 1px solid #00113e38;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.input-group:nth-child(1) {
+    grid-area: s1;
+}
+
+.input-group:nth-child(2) {
+    grid-area: s2;
+}
+
+.input-group {
+    margin: 10px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color3);
+}
+
+section#banner form .infos .group-addon .input-group {
+    color: var(--color0);
+}
+
+.group-addon {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "s1 s2";
+    grid-gap: 20px;
+}
+
+section#banner {}
+
+section#banner form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+section#banner form .infos .group-addon {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+    color: var(--color0);
+}
+
+section#banner form .infos button {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 18px;
+}
+
+section#banner form .upload-box {
+    padding: 15px;
+    margin: 0 20px;
+    position: relative;
+    border: 4px dotted #242424;
+}
+
+section#banner form .upload-box .btn {
+    position: absolute;
+    right: 0;
+    top: -85px;
+    background-color: #303030ba;
+}
+
+section#banner img#preview {
+    height: 100%;
+    object-fit: cover;
+}
+
+section#banner input {
+    width: 100%;
+    background: #7e7e7e17;
+    margin: 10px 0 0 0;
+    padding: 15px;
+    color: #8d8d8d;
+}
+
+section#banner .input-group textarea {
+    margin: 10px 0 0 0;
+    background: #7e7e7e17;
+    border: transparent;
+    border-radius: var(--radius);
+    font-size: 18px;
+    padding: 15px;
+    color: #8d8d8d;
+    font-family: var(--font);
+    line-height: 1.7;
+}
+
+section#banner .upload-box input {
+    display: none;
+}
